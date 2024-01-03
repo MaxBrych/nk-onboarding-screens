@@ -27,7 +27,7 @@ class IntroPage4 extends StatelessWidget {
                   children: <Widget>[
                     SizedBox(height: 64),
                     Text(
-                      'Täglich regionale Nachrichten',
+                      'Knifflige Sudokus lösen und mehr',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 24,
@@ -36,7 +36,7 @@ class IntroPage4 extends StatelessWidget {
                     ),
                     SizedBox(height: 16),
                     Text(
-                      'TBekomme die neusten Nachrichten aus der Region um bestens Informiert', // Your body text
+                      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod ',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 18,

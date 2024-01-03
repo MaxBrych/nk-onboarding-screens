@@ -45,57 +45,74 @@ class _OnboardingScreenState extends State<OnBoardingScreen> {
           // Bottom controls with padding
           Positioned(
             bottom: 32,
-            left: 16,
-            right: 16,
+            left: 0,
+            right: 0,
             child: Padding(
-              padding: EdgeInsets.all(16.0), // Added padding
+              padding: EdgeInsets.all(16.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  // Skip button
-                  GestureDetector(
-                    onTap: () {
-                      _controller.jumpToPage(3); // Jump to the last page
-                    },
-                    child: Text('Skip'),
+                  // Skip or Back button
+                  Expanded(
+                    child: TextButton(
+                      onPressed: () {
+                        if (onLastPage) {
+                          _controller
+                              .jumpToPage(0); // Jump back to the first page
+                        } else {
+                          _controller.jumpToPage(3); // Jump to the last page
+                        }
+                      },
+                      child: Text(onLastPage ? 'Zurück' : 'Überspringen',
+                          style: TextStyle(color: Color(0xFF006689))),
+                    ),
                   ),
 
-                  // Dot indicator with customizations
+                  SizedBox(
+                    width: 32,
+                  ),
+
+                  // Dot indicator with fixed position
                   SmoothPageIndicator(
                     controller: _controller,
                     count: 4,
                     effect: WormEffect(
-                      dotHeight: 10, // Smaller dot size
-                      dotWidth: 10,
-                      activeDotColor: Color(0xFF006689), // Primary dot color
+                      dotHeight: 8,
+                      dotWidth: 8,
+                      activeDotColor: Color(0xFF006689),
                     ),
                   ),
-
+                  SizedBox(
+                    width: 32,
+                  ),
                   // Next or Anmelden button
-                  onLastPage
-                      ? ElevatedButton(
-                          onPressed: () {
-                            Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => EndFlowScreen()),
-                            );
-                          },
-                          child: Text('Anmelden'),
-                          style: ElevatedButton.styleFrom(
-                            primary: Color(0xFF006689), // Button color
-                            onPrimary: Colors.white, // Text color
+                  Expanded(
+                    child: onLastPage
+                        ? ElevatedButton(
+                            onPressed: () {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => EndFlowScreen()),
+                              );
+                            },
+                            child: Text('Abschließen'),
+                            style: ElevatedButton.styleFrom(
+                              primary: Color(0xFF006689),
+                              onPrimary: Colors.white,
+                            ),
+                          )
+                        : TextButton(
+                            onPressed: () {
+                              _controller.nextPage(
+                                duration: Duration(milliseconds: 500),
+                                curve: Curves.easeIn,
+                              );
+                            },
+                            child: Text('Weiter',
+                                style: TextStyle(color: Color(0xFF006689))),
                           ),
-                        )
-                      : GestureDetector(
-                          onTap: () {
-                            _controller.nextPage(
-                              duration: Duration(milliseconds: 500),
-                              curve: Curves.easeIn,
-                            );
-                          },
-                          child: Text('Weiter'),
-                        ),
+                  ),
                 ],
               ),
             ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'onboarding.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -10,9 +9,9 @@ class WelcomeScreen extends StatelessWidget {
         children: <Widget>[
           Expanded(
             child: Center(
-              child: SvgPicture.asset(
-                'assets/images/onboarding/welcome.svg',
-                width: 500, // Adjust as needed
+              child: Image.asset(
+                'assets/images/onboarding/start.png',
+                width: 600, // Adjust as needed
                 // height is auto to maintain aspect ratio
               ),
             ),
@@ -26,13 +25,14 @@ class WelcomeScreen extends StatelessWidget {
                 children: <Widget>[
                   SizedBox(height: 32),
                   Text(
-                    'Welcome to Our App!',
+                    'Willkommen in unserer App!',
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        fontSize: 36, fontWeight: FontWeight.bold, height: 1.2),
                   ),
                   SizedBox(height: 16),
                   Text(
-                    'Explore the app to get the latest regional news and updates.',
+                    'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod ',
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 18),
                   ),
@@ -43,7 +43,7 @@ class WelcomeScreen extends StatelessWidget {
                       onPrimary: Colors.white,
                       minimumSize: Size(double.infinity, 48),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(4),
+                        borderRadius: BorderRadius.circular(100),
                       ),
                     ),
                     onPressed: () {
@@ -54,7 +54,7 @@ class WelcomeScreen extends StatelessWidget {
                       );
                     },
                     child: Text(
-                      'Start Onboarding',
+                      'Beginnen',
                       style: TextStyle(
                         fontSize: 16,
                       ),
@@ -66,7 +66,7 @@ class WelcomeScreen extends StatelessWidget {
                       // Define what happens when this button is pressed
                     },
                     child: Text(
-                      'Skip',
+                      'Überspringen',
                       style: TextStyle(
                         fontSize: 16,
                         color: Color(0xFF006689),

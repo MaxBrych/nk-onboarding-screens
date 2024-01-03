@@ -27,13 +27,14 @@ class EndFlowScreen extends StatelessWidget {
                 children: <Widget>[
                   SizedBox(height: 48),
                   Text(
-                    'Thank You for Joining Us!',
+                    'Personalisieren Sie jetzt Ihr App Erlebnis',
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        fontSize: 32, fontWeight: FontWeight.bold, height: 1.4),
                   ),
                   SizedBox(height: 16),
                   Text(
-                    'Start exploring the app now.',
+                    'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod',
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 18),
                   ),
@@ -44,7 +45,7 @@ class EndFlowScreen extends StatelessWidget {
                       onPrimary: Colors.white,
                       minimumSize: Size(double.infinity, 48),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(4),
+                        borderRadius: BorderRadius.circular(100),
                       ),
                     ),
                     onPressed: () {
@@ -55,7 +56,7 @@ class EndFlowScreen extends StatelessWidget {
                       );
                     },
                     child: Text(
-                      'Personalisieren',
+                      'Personalisieren ',
                       style: TextStyle(
                         fontSize: 16,
                       ),
@@ -67,7 +68,7 @@ class EndFlowScreen extends StatelessWidget {
                       // Define what happens when this button is pressed
                     },
                     child: Text(
-                      'Skip',
+                      'Überspringen',
                       style: TextStyle(
                         fontSize: 16,
                         color: Color(0xFF006689),

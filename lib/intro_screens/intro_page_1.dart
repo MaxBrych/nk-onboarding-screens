@@ -36,7 +36,7 @@ class IntroPage1 extends StatelessWidget {
                     ),
                     SizedBox(height: 16), // Space between heading and body text
                     Text(
-                      'TBekomme die neusten Nachrichten aus der Region um bestens Informiert', // Your body text
+                      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod ',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 18,
