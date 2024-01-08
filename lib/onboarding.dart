@@ -48,7 +48,7 @@ class _OnboardingScreenState extends State<OnBoardingScreen> {
             left: 0,
             right: 0,
             child: Padding(
-              padding: EdgeInsets.all(16.0),
+              padding: EdgeInsets.all(32.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

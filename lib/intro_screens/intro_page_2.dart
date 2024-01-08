@@ -20,29 +20,38 @@ class IntroPage2 extends StatelessWidget {
           Flexible(
             child: Container(
               color: Colors.white,
-              child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    SizedBox(height: 64),
-                    Text(
-                      'Informiert bleiben egal wo Sie sich gerade befinden',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 32.0),
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      SizedBox(height: 32),
+                      SvgPicture.asset(
+                        'assets/images/onboarding/news.svg',
+                        width: 48,
+                        height: 48,
                       ),
-                    ),
-                    SizedBox(height: 16),
-                    Text(
-                      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod ',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 18,
+                      SizedBox(height: 16),
+                      Text(
+                        'Informiert bleiben egal wo Sie sich gerade befinden',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
-                  ],
+                      SizedBox(height: 16),
+                      Text(
+                        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod ',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 18,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
