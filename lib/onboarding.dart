@@ -63,6 +63,10 @@ class _OnboardingScreenState extends State<OnBoardingScreen> {
                           _controller.jumpToPage(3); // Jump to the last page
                         }
                       },
+                      style: TextButton.styleFrom(
+                        primary: Color(0xFF006689),
+                        splashFactory: InkRipple.splashFactory,
+                      ),
                       child: Text(onLastPage ? 'Zurück' : 'Überspringen',
                           style: TextStyle(color: Color(0xFF006689))),
                     ),
@@ -109,6 +113,10 @@ class _OnboardingScreenState extends State<OnBoardingScreen> {
                                 curve: Curves.easeIn,
                               );
                             },
+                            style: TextButton.styleFrom(
+                              primary: Color(0xFF006689),
+                              splashFactory: InkRipple.splashFactory,
+                            ),
                             child: Text('Weiter',
                                 style: TextStyle(color: Color(0xFF006689))),
                           ),
