@@ -35,7 +35,7 @@ class IntroPage3 extends StatelessWidget {
                       ),
                       SizedBox(height: 16),
                       Text(
-                        'Als Abonnent jetzt bei regionalen Geschäften Geld sparen',
+                        'Als Abonnent bei regionalen Geschäften Geld sparen',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 24,

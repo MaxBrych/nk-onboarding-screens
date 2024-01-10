@@ -45,7 +45,7 @@ class EndFlowScreen extends StatelessWidget {
                       onPrimary: Colors.white,
                       minimumSize: Size(double.infinity, 48),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(100),
+                        borderRadius: BorderRadius.circular(4),
                       ),
                     ),
                     onPressed: () {

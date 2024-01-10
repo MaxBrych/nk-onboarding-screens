@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 import 'package:onboarding/end_flow.dart';
 import 'package:onboarding/intro_screens/intro_page_1.dart';
 import 'package:onboarding/intro_screens/intro_page_2.dart';
@@ -57,8 +59,7 @@ class _OnboardingScreenState extends State<OnBoardingScreen> {
                     child: TextButton(
                       onPressed: () {
                         if (onLastPage) {
-                          _controller
-                              .jumpToPage(0); // Jump back to the first page
+                          _controller.jumpToPage(0); // Jump back to the first page
                         } else {
                           _controller.jumpToPage(3); // Jump to the last page
                         }
@@ -66,15 +67,18 @@ class _OnboardingScreenState extends State<OnBoardingScreen> {
                       style: TextButton.styleFrom(
                         primary: Color(0xFF006689),
                         splashFactory: InkRipple.splashFactory,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(4),
+                        ),
                       ),
-                      child: Text(onLastPage ? 'Zurück' : 'Überspringen',
-                          style: TextStyle(color: Color(0xFF006689))),
+                      child: Text(
+                        onLastPage ? 'Zurück' : 'Überspingen',
+                        style: TextStyle(color: Color(0xFF006689)),
+                      ),
                     ),
                   ),
 
-                  SizedBox(
-                    width: 32,
-                  ),
+                  SizedBox(width: 32),
 
                   // Dot indicator with fixed position
                   SmoothPageIndicator(
@@ -86,40 +90,45 @@ class _OnboardingScreenState extends State<OnBoardingScreen> {
                       activeDotColor: Color(0xFF006689),
                     ),
                   ),
-                  SizedBox(
-                    width: 32,
-                  ),
-                  // Next or Anmelden button
+
+                  SizedBox(width: 32),
+
                   Expanded(
                     child: onLastPage
                         ? ElevatedButton(
-                            onPressed: () {
-                              Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => EndFlowScreen()),
-                              );
-                            },
-                            child: Text('Abschließen'),
-                            style: ElevatedButton.styleFrom(
-                              primary: Color(0xFF006689),
-                              onPrimary: Colors.white,
-                            ),
-                          )
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => EndFlowScreen()),
+                        );
+                      },
+                      child: Text('Weiter'),
+                      style: ElevatedButton.styleFrom(
+                        primary: Theme.of(context).primaryColor,
+                        onPrimary: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                      ),
+                    )
                         : TextButton(
-                            onPressed: () {
-                              _controller.nextPage(
-                                duration: Duration(milliseconds: 500),
-                                curve: Curves.easeIn,
-                              );
-                            },
-                            style: TextButton.styleFrom(
-                              primary: Color(0xFF006689),
-                              splashFactory: InkRipple.splashFactory,
-                            ),
-                            child: Text('Weiter',
-                                style: TextStyle(color: Color(0xFF006689))),
-                          ),
+                      onPressed: () {
+                        _controller.nextPage(
+                          duration: Duration(milliseconds: 500),
+                          curve: Curves.easeIn,
+                        );
+                      },
+                      style: TextButton.styleFrom(
+                        primary: Theme.of(context).primaryColor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                      ),
+                      child: Text(
+                        'Weiter',
+                        style: TextStyle(color: Color(0xFF006689)),
+                      ),
+                    ),
                   ),
                 ],
               ),

@@ -35,7 +35,7 @@ class IntroPage4 extends StatelessWidget {
                       ),
                       SizedBox(height: 16),
                       Text(
-                        'Knifflige Sudokus lösen und mehr',
+                        'Knifflige Sudokus lösen und noch viel mehr',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 24,

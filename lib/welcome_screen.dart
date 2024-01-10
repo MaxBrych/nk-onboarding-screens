@@ -39,11 +39,11 @@ class WelcomeScreen extends StatelessWidget {
                   Spacer(),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      primary: Color(0xFF006689),
+                      primary: Theme.of(context).primaryColor,
                       onPrimary: Colors.white,
                       minimumSize: Size(double.infinity, 48),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(100),
+                        borderRadius: BorderRadius.circular(4),
                       ),
                     ),
                     onPressed: () {
