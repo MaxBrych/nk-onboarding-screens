@@ -36,7 +36,7 @@ class EndFlowScreen extends StatelessWidget {
                   Text(
                     'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod',
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 18),
+                    style: TextStyle(fontSize: 16),
                   ),
                   Spacer(),
                   ElevatedButton(

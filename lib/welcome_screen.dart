@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'onboarding.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -9,10 +10,14 @@ class WelcomeScreen extends StatelessWidget {
         children: <Widget>[
           Expanded(
             child: Center(
-              child: Image.asset(
-                'assets/images/onboarding/start.png',
-                width: 600, // Adjust as needed
-                // height is auto to maintain aspect ratio
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: Lottie.asset(
+                  'assets/animations/hero-lottie-animation.json',
+                  reverse: false,
+                  repeat: true,
+                  fit: BoxFit.contain,
+                ),
               ),
             ),
           ),
@@ -28,13 +33,13 @@ class WelcomeScreen extends StatelessWidget {
                     'Willkommen in unserer App!',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                        fontSize: 36, fontWeight: FontWeight.bold, height: 1.2),
+                        fontSize: 32, fontWeight: FontWeight.bold, height: 1.2),
                   ),
                   SizedBox(height: 16),
                   Text(
                     'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod ',
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 18),
+                    style: TextStyle(fontSize: 16),
                   ),
                   Spacer(),
                   ElevatedButton(
@@ -65,6 +70,13 @@ class WelcomeScreen extends StatelessWidget {
                     onPressed: () {
                       // Define what happens when this button is pressed
                     },
+                    style: TextButton.styleFrom(
+                      primary: Color(0xFF006689),
+                      minimumSize: Size(double.infinity, 48),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                    ),
                     child: Text(
                       'Überspringen',
                       style: TextStyle(
